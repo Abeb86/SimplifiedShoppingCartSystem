@@ -6,7 +6,7 @@ abstract public class Item {
     static int ID;
     private float itemPrice;
     private boolean itemVisibility;
-    private int inStock;
+    private static int inStock;
 
 
     //default constructor
@@ -44,7 +44,10 @@ abstract public class Item {
     {
         this.itemPrice=price;
     }
-
+    public void setInstock(int newItemNumber)
+    {
+        this.inStock=inStock+newItemNumber;
+    }
     //getter methods
 
     //using setter method for name of an Item
@@ -59,21 +62,23 @@ abstract public class Item {
     }
 
     //using setter method for item price
-    public double getitemPrice()
+    public double getItemPrice()
     {
         return itemPrice;
     }
 
-    public double getInStockQuantity(){
+    public double getInstock()
+    {
         return inStock;
     }
+    //
+
 
 
     //abstracts method to be implemented in the subclass
-    abstract public double increateInStockQuantity();
+    abstract public double increaseInStockQuantity();
     abstract public double decreaseInStockQuantity();
 
 }
-
 
 
